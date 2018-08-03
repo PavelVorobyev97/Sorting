@@ -8,7 +8,8 @@ public class Sorting {
         MyArray a = new MyArray();
         System.out.println(Arrays.toString(a.arr));
         //a.insertSort();
-        a.selectSort();
+        // a.selectSort();
+        a.shellSort();
     }
-    
+
 }

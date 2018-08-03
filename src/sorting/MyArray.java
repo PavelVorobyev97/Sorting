@@ -21,7 +21,7 @@ public class MyArray {
 
     //сортировка выбором O(n^2)
     public void selectSort() {
-        int min_i = 0;
+        int min_i;
         int min_val;
         int tmp;
 
@@ -40,5 +40,26 @@ public class MyArray {
         }
         System.out.println(Arrays.toString(arr));
     }
+    
+    //сортировка Шелла
+    public void shellSort(){
+        int d;
+        d = arr.length/2;
+        while(d > 0){
+            for(int i = 0; i < (arr.length - d); i++){
+                int j = i;
+                while((j >= 0) && (arr[j] > arr[j + d])){
+                    int tmp = arr[j];
+                    arr[j] = arr[j + d];
+                    arr[j + d] = tmp;
+                    j--;
+                }               
+            }
+            d = d/2;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+    
+    
 
 }
