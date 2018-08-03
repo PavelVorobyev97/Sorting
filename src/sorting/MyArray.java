@@ -19,23 +19,24 @@ public class MyArray {
         System.out.println(Arrays.toString(arr));
     }
 
+    //сортировка выбором O(n^2)
     public void selectSort() {
         int min_i = 0;
         int min_val;
         int tmp;
 
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length; i++) {
             min_i = i;
             min_val = arr[i];
-            for (int j = i; j < arr.length - 1; j++) {
-                if (arr[min_i] > arr[j + 1]) {
-                    min_i = j + 1;
-                    min_val = arr[j + 1];
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[min_i] > arr[j]) {
+                    min_i = j;
+                    min_val = arr[j];
                 }
-                tmp = arr[i];
-                arr[i] = arr[min_i];
-                arr[min_i] = tmp;
             }
+            tmp = arr[i];
+            arr[i] = arr[min_i];
+            arr[min_i] = tmp;
         }
         System.out.println(Arrays.toString(arr));
     }
